@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
+import { isValidEmail } from '@/lib/validation';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -15,11 +16,6 @@ export default function ContactForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitMessage, setSubmitMessage] = useState('');
 
-  const validateEmail = (email: string) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  };
-
   const validateForm = () => {
     const newErrors: {[key: string]: string} = {};
 
@@ -29,7 +25,7 @@ export default function ContactForm() {
 
     if (!formData.email.trim()) {
       newErrors.email = 'L\'adresse e-mail est requise';
-    } else if (!validateEmail(formData.email)) {
+    } else if (!isValidEmail(formData.email)) {
       newErrors.email = 'Format d\'adresse e-mail invalide';
     }
 
