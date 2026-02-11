@@ -36,6 +36,11 @@ export default function Footer() {
                   Commander
                 </a>
               </li>
+              <li>
+                <a href="/contact" className="text-gray-300 hover:text-primary transition">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -14,7 +14,7 @@ const config: Config = {
         accent: "#F4E4C1",
       },
       fontFamily: {
-        sans: ["var(--font-inter)"],
+        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
     },
   },

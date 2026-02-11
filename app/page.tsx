@@ -34,6 +34,7 @@ export default function Home() {
               <a href="#bienfaits" className="text-gray-700 hover:text-primary transition">Bienfaits</a>
               <a href="#temoignages" className="text-gray-700 hover:text-primary transition">Témoignages</a>
               <a href="#commander" className="text-gray-700 hover:text-primary transition">Commander</a>
+              <a href="/contact" className="text-gray-700 hover:text-primary transition">Contact</a>
             </div>
             <button
               onClick={() => setIsCartOpen(true)}
