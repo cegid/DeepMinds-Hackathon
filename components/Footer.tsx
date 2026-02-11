@@ -17,23 +17,28 @@ export default function Footer() {
             <h4 className="font-bold mb-4">Liens Rapides</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#accueil" className="text-gray-300 hover:text-primary transition">
+                <a href="/#accueil" className="text-gray-300 hover:text-primary transition">
                   Accueil
                 </a>
               </li>
               <li>
-                <a href="#produit" className="text-gray-300 hover:text-primary transition">
+                <a href="/#produit" className="text-gray-300 hover:text-primary transition">
                   Notre Produit
                 </a>
               </li>
               <li>
-                <a href="#bienfaits" className="text-gray-300 hover:text-primary transition">
+                <a href="/#bienfaits" className="text-gray-300 hover:text-primary transition">
                   Bienfaits
                 </a>
               </li>
               <li>
-                <a href="#commander" className="text-gray-300 hover:text-primary transition">
+                <a href="/#commander" className="text-gray-300 hover:text-primary transition">
                   Commander
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="text-gray-300 hover:text-primary transition">
+                  Contact
                 </a>
               </li>
             </ul>

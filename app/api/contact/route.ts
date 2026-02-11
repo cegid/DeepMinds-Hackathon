@@ -13,6 +13,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { success: false, message: 'L\'adresse e-mail n\'est pas valide' },
+        { status: 400 }
+      );
+    }
+
     // Here you would typically:
     // 1. Save contact message to database
     // 2. Send notification email to admin
