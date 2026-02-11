@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Hero from '@/components/Hero';
 import ProductInfo from '@/components/ProductInfo';
 import Features from '@/components/Features';
@@ -34,6 +35,7 @@ export default function Home() {
               <a href="#bienfaits" className="text-gray-700 hover:text-primary transition">Bienfaits</a>
               <a href="#temoignages" className="text-gray-700 hover:text-primary transition">Témoignages</a>
               <a href="#commander" className="text-gray-700 hover:text-primary transition">Commander</a>
+              <Link href="/contact" className="text-gray-700 hover:text-primary transition">Contact</Link>
             </div>
             <button
               onClick={() => setIsCartOpen(true)}
