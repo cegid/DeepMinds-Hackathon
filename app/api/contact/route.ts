@@ -3,12 +3,21 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, message } = body;
+    const { name, email, subject, message } = body;
 
     // Validate input
-    if (!name || !email || !message) {
+    if (!name || !email || !subject || !message) {
       return NextResponse.json(
         { success: false, message: 'Tous les champs sont requis' },
+        { status: 400 }
+      );
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { success: false, message: 'Veuillez entrer une adresse e-mail valide' },
         { status: 400 }
       );
     }
@@ -23,7 +32,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Message envoyé! Nous vous répondrons sous 24h.',
+      message: 'Votre message a été envoyé avec succès. Nous reviendrons vers vous bientôt.',
     });
   } catch (error) {
     return NextResponse.json(

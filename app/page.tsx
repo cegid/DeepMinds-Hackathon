@@ -7,6 +7,7 @@ import Features from '@/components/Features';
 import Gallery from '@/components/Gallery';
 import Testimonials from '@/components/Testimonials';
 import OrderSection from '@/components/OrderSection';
+import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import Cart from '@/components/Cart';
 
@@ -34,6 +35,7 @@ export default function Home() {
               <a href="#bienfaits" className="text-gray-700 hover:text-primary transition">Bienfaits</a>
               <a href="#temoignages" className="text-gray-700 hover:text-primary transition">Témoignages</a>
               <a href="#commander" className="text-gray-700 hover:text-primary transition">Commander</a>
+              <a href="#contact" className="text-gray-700 hover:text-primary transition">Contact</a>
             </div>
             <button
               onClick={() => setIsCartOpen(true)}
@@ -69,6 +71,7 @@ export default function Home() {
       <div id="commander">
         <OrderSection onAddToCart={handleAddToCart} />
       </div>
+      <ContactForm />
       <Footer />
 
       {/* Cart Sidebar */}
