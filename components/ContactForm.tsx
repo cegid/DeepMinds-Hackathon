@@ -39,10 +39,10 @@ export default function ContactForm() {
 
     // Validate email
     if (!formData.email.trim()) {
-      newErrors.email = 'L&apos;adresse e-mail est requise';
+      newErrors.email = 'L\'adresse e-mail est requise';
       isValid = false;
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = 'L&apos;adresse e-mail n&apos;est pas valide';
+      newErrors.email = 'L\'adresse e-mail n\'est pas valide';
       isValid = false;
     }
 
@@ -83,7 +83,7 @@ export default function ContactForm() {
         setFormData({ name: '', email: '', message: '' });
         setErrors({ name: '', email: '', message: '' });
       } else {
-        setSubmitError(data.message || 'Une erreur est survenue lors de l&apos;envoi du message');
+        setSubmitError(data.message || 'Une erreur est survenue lors de l\'envoi du message');
       }
     } catch (error) {
       setSubmitError('Erreur de connexion. Veuillez réessayer plus tard.');
