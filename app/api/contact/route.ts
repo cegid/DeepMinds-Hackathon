@@ -1,14 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { isValidEmail } from '@/lib/validation';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, message } = body;
+    const { name, email, subject, message } = body;
 
     // Validate input
-    if (!name || !email || !message) {
+    if (!name || !email || !subject || !message) {
       return NextResponse.json(
         { success: false, message: 'Tous les champs sont requis' },
+        { status: 400 }
+      );
+    }
+
+    // Validate email format
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { success: false, message: 'Format d\'adresse e-mail invalide' },
         { status: 400 }
       );
     }
@@ -23,7 +32,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Message envoyé! Nous vous répondrons sous 24h.',
+      message: 'Votre message a été envoyé avec succès',
     });
   } catch (error) {
     return NextResponse.json(
